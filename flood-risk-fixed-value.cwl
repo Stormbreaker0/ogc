@@ -15,10 +15,14 @@ $graph:
         - low
         - medium
         - high
+      inputBinding: 
+        prefix: --confidence
       label: Confidence
       doc: Confidence level of the flood model.
     bbox:
       type: string
+      inputBinding:
+        prefix: --bbox
       label: Area of Interest
       doc: Bounding box, serialized as a string.
     ssp:
@@ -29,6 +33,8 @@ $graph:
         - ssp245
         - ssp370
         - ssp585
+      inputBinding:
+        prefix: --ssp
       label: SSP Scenario
       doc: Shared Socioeconomic Pathway.
     storm_surge:
@@ -43,6 +49,8 @@ $graph:
         - '3_0'
         - '5_0'
         - all
+      inputBinding:
+        prefix: --storm_surge
       label: Storm Surge Return Period
       doc: Return period identifier.
     year:
@@ -57,6 +65,8 @@ $graph:
         - '2120'
         - '2150'
         - all
+      inputBinding:
+        prefix: --year
       label: Year
       doc: Target year for the flood projection.
   outputs:
