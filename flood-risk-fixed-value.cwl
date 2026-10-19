@@ -58,10 +58,10 @@ $graph:
         label: Confidence
         doc: Confidence level of the flood model.
 
-      geometry:
+      bbox:
         type: string
         label: Area of Interest
-        doc: GeoJSON Polygon geometry, serialized as a JSON string.
+        doc: GeoJSON Polygon bbox, serialized as a JSON string.
 
       ssp:
         type: SSP
@@ -88,7 +88,7 @@ $graph:
         run: '#flood-risk-cl'
         in:
           confidence: confidence
-          geometry: geometry
+          bbox: bbox
           ssp: ssp
           storm_surge: storm_surge
           year: year
@@ -119,10 +119,10 @@ $graph:
         inputBinding:
           prefix: --confidence
 
-      geometry:
+      bbox:
         type: string
         inputBinding:
-          prefix: --geometry
+          prefix: --bbox
 
       ssp:
         type: SSP
