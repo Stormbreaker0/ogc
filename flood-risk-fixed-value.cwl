@@ -93,10 +93,10 @@ $graph:
       type: string
       inputBinding:
         prefix: --confidence
-    geometry:
+    bbox:
       type: string
       inputBinding:
-        prefix: --geometry
+        prefix: --bbox
     ssp:
       type: string
       inputBinding:
