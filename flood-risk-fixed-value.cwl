@@ -62,7 +62,7 @@ $graph:
       coresMin: 1
   baseCommand:
   - python
-  - /app/flood_risk_processor.py
+  - /app/flood-risk-fixed-value-processor.py
   stdout: output.json
   inputs:
     confidence:
