@@ -17,10 +17,10 @@ $graph:
         - high
       label: Confidence
       doc: Confidence level of the flood model.
-    geometry:
+    bbox:
       type: string
       label: Area of Interest
-      doc: GeoJSON Polygon geometry, serialized as a JSON string.
+      doc: Bounding box, serialized as a string.
     ssp:
       type:
         type: enum
@@ -68,7 +68,7 @@ $graph:
       run: '#flood-risk-cl'
       in:
         confidence: confidence
-        geometry: geometry
+        bbox: bbox
         ssp: ssp
         storm_surge: storm_surge
         year: year
@@ -78,7 +78,7 @@ $graph:
   id: flood-risk-cl
   requirements:
     DockerRequirement:
-      dockerPull: registry.example.com/gda/flood-risk-processor:1.0.0
+      dockerPull: localhost/flood-risk-processor:1.0.0
     NetworkAccess:
       networkAccess: true
     ResourceRequirement:
@@ -86,7 +86,7 @@ $graph:
       coresMin: 1
   baseCommand:
   - python
-  - /app/flood_risk_processor.py
+  - /app/flood-risk-fixed-value-processor.py
   stdout: output.json
   inputs:
     confidence:
